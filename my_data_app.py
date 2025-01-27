@@ -52,6 +52,8 @@ ax.axis('equal')  # Assure que le cercle est bien rond
 
 # Afficher le diagramme
 st.pyplot(fig)
+
+st.line_chart(df)
         
 
  
