@@ -42,35 +42,5 @@ load_(pd.read_csv('data/motos_scooters4.csv'), 'Motocycles data 4', '4')
 load_(pd.read_csv('data/motos_scooters5.csv'), 'Motocycles data 5', '5')
 
 
-df=pd.read_csv('data/motos_scooters1.csv')
-
-# Comptage des occurrences pour chaque marque
-marque_counts = df['marque'].value_counts()
-
-# Création du diagramme en barres
-fig, ax = plt.subplots()
-ax.bar(marque_counts.index, marque_counts.values, color='skyblue')
-ax.set_xlabel('Marques')
-ax.set_ylabel('Nombre d\'occurrences')
-ax.set_title('Distribution des marques')
-plt.xticks(rotation=45)  # Rotation des noms des marques pour une meilleure lisibilité
-
-# Afficher le diagramme
-st.pyplot(fig)
-# Comptage des occurrences pour chaque marque
-marque_counts = df['marque'].value_counts().reset_index()
-marque_counts.columns = ['Marque', 'Occurrences']
-
-# Création du diagramme en barres avec Seaborn
-fig, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(data=marque_counts, x='Marque', y='Occurrences', palette='viridis', ax=ax)
-ax.set_title('Distribution des Marques', fontsize=16)
-ax.set_xlabel('Marque', fontsize=12)
-ax.set_ylabel('Occurrences', fontsize=12)
-plt.xticks(rotation=45)  # Rotation des étiquettes pour éviter le chevauchement
-
-# Afficher le graphique
-st.pyplot(fig)
-
 
 
