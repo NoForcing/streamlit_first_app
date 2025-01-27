@@ -42,20 +42,21 @@ load_(pd.read_csv('data/motos_scooters5.csv'), 'Motocycles data 5', '5')
 
 
 df=pd.read_csv('data/motos_scooters1.csv')
+
 # Comptage des occurrences pour chaque marque
 marque_counts = df['marque'].value_counts()
 
-# Création du diagramme circulaire
+# Création du diagramme en barres
 fig, ax = plt.subplots()
-ax.pie(marque_counts, labels=marque_counts.index, autopct='%1.1f%%', startangle=90)
-ax.axis('equal')  # Assure que le cercle est bien rond
+ax.bar(marque_counts.index, marque_counts.values, color='skyblue')
+ax.set_xlabel('Marques')
+ax.set_ylabel('Nombre d\'occurrences')
+ax.set_title('Distribution des marques')
+plt.xticks(rotation=45)  # Rotation des noms des marques pour une meilleure lisibilité
 
 # Afficher le diagramme
 st.pyplot(fig)
 
-st.line_chart(df)
-        
 
- 
 
 
