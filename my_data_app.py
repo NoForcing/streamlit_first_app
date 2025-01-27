@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt 
 
 
 st.markdown("<h1 style='text-align: center; color: black;'>MY DATA APP</h1>", unsafe_allow_html=True)
@@ -41,8 +42,17 @@ load_(pd.read_csv('data/motos_scooters5.csv'), 'Motocycles data 5', '5')
 
 
 df=pd.read_csv('data/motos_scooters1.csv')
+# Comptage des occurrences pour chaque marque
+        marque_counts = df['marque'].value_counts()
 
-st.pie(df['marque'])
+        # Création du diagramme circulaire
+        fig, ax = plt.subplots()
+        ax.pie(marque_counts, labels=marque_counts.index, autopct='%1.1f%%', startangle=90)
+        ax.axis('equal')  # Assure que le cercle est bien rond
+
+        # Afficher le diagramme
+        st.pyplot(fig)
+        
 
  
 
