@@ -43,15 +43,15 @@ load_(pd.read_csv('data/motos_scooters5.csv'), 'Motocycles data 5', '5')
 
 df=pd.read_csv('data/motos_scooters1.csv')
 # Comptage des occurrences pour chaque marque
-        marque_counts = df['marque'].value_counts()
+marque_counts = df['marque'].value_counts()
 
-        # Création du diagramme circulaire
-        fig, ax = plt.subplots()
-        ax.pie(marque_counts, labels=marque_counts.index, autopct='%1.1f%%', startangle=90)
-        ax.axis('equal')  # Assure que le cercle est bien rond
+# Création du diagramme circulaire
+fig, ax = plt.subplots()
+ax.pie(marque_counts, labels=marque_counts.index, autopct='%1.1f%%', startangle=90)
+ax.axis('equal')  # Assure que le cercle est bien rond
 
-        # Afficher le diagramme
-        st.pyplot(fig)
+# Afficher le diagramme
+st.pyplot(fig)
         
 
  
