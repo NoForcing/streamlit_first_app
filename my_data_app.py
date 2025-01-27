@@ -40,7 +40,9 @@ load_(pd.read_csv('data/motos_scooters4.csv'), 'Motocycles data 4', '4')
 load_(pd.read_csv('data/motos_scooters5.csv'), 'Motocycles data 5', '5')
 
 
+df=pd.read_csv('data/motos_scooters1.csv')
 
+st.pie(df['marque'])
 
  
 
